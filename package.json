@@ -1,0 +1,17 @@
+{
+  "name": "tangle-tree-kit",
+  "version": "0.1.0",
+  "description": "2D k-d tree implementation for axis-aligned rectangle range queries returning enclosed points.",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": "./src/index.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [],
+  "license": "BSD-3-Clause",
+  "dependencies": {}
+}
