@@ -25,3 +25,10 @@ The trade-off is deliberately not hiding: there is no rebalancing. Insert points
 ## The awkward edge
 
 When two points share a coordinate along the active split axis, the tie-break sends the equal point to the **right** subtree. A consequence is that a pure `x = c` slab query descends both sides near the boundary; duplicates of `(c, c)` all come back, but you should not rely on a particular left/right placement of any specific point. Treat the traversal order as unspecified.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
